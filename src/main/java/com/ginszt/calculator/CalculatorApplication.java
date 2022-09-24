@@ -1,13 +1,13 @@
-package com.ginszt.calc;
+package com.ginszt.calculator;
 
 import org.springframework.boot.SpringApplication;
 import org.springframework.boot.autoconfigure.SpringBootApplication;
 
 @SpringBootApplication
-public class CalcApplication {
+public class CalculatorApplication {
 
 	public static void main(String[] args) {
-		SpringApplication.run(CalcApplication.class, args);
+		SpringApplication.run(CalculatorApplication.class, args);
 	}
 
 }
