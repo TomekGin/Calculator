@@ -1,0 +1,92 @@
+<!doctype html>
+<html xmlns:th="http://www.thymeleaf.org" lang="en" class="h-100">
+<head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <title>Calculator</title>
+    <link href="/bootstrap.min.css" rel="stylesheet">
+    <meta name="theme-color" content="#7952b3">
+    <link href="/sticky-footer-navbar.css" rel="stylesheet">
+</head>
+<body class="d-flex flex-column h-100">
+<header>
+    <nav class="navbar navbar-expand-md navbar-dark fixed-top bg-dark">
+        <div class="container-fluid">
+            <a class="navbar-brand" href="/calculator">Calculator</a>
+            <button class="navbar-toggler" type="button" data-bs-toggle="collapse"
+                    data-bs-target="#navbarCollapse" aria-controls="navbarCollapse"
+                    aria-expanded="false" aria-label="Toggle navigation">
+                <span class="navbar-toggler-icon"></span>
+            </button>
+        </div>
+    </nav>
+</header>
+<main class="flex-shrink-0">
+
+    <div class="container">
+        <form action="/obliczenia" method="POST">
+
+            Enter first value:
+            <div class="form-group">
+                <input
+                        type="number"
+                        class="form-control"
+                        id="firstValue"
+                        placeholder="first value"
+                        name="firstValue"
+                        step="any">
+
+                <select name="units1" id="units1" class="form-control" type="text" placeholder="Enter units1">
+                    <option value="m">m</option>
+                    <option value="ft">ft</option>
+                    <option value="NM">NM</option>
+                </select>
+            </div>
+
+            <div class="form-group">
+                <label for="type">Choose typ of calculation:</label>
+                <select name="type" id="type" class="form-control" type="text" placeholder="Enter type">
+                    <option value="+">+</option>
+                    <option value="-">-</option>
+                    <option value="*">*</option>
+                    <option value="/">/</option>
+                </select>
+            </div>
+
+            Enter second value:
+            <div class="form-group">
+                <input
+                        type="number"
+                        class="form-control"
+                        id="secondValue"
+                        placeholder="second value"
+                        name="secondValue"
+                        step="any">
+
+                <select name="units2" id="units2" class="form-control" type="text" placeholder="Enter units2">
+                    <option value="m">m</option>
+                    <option value="ft">ft</option>
+                    <option value="NM">NM</option>
+                </select>
+            </div>
+
+            <div>
+                <select name="units3" id="units3" class="form-control" type="text" placeholder="Enter units3">
+                    <option value="m">m</option>
+                    <option value="ft">ft</option>
+                    <option value="NM">NM</option>
+                </select>
+            </div>
+
+            <button type="submit" class="btn btn-success">Calculate</button>
+        </form>
+    </div>
+
+</main>
+<footer class="footer mt-auto py-3 bg-light">
+    <div class="container">
+        <span class="text-muted">&copy; tomek.ginszt</span>
+    </div>
+</footer>
+</body>
+</html>

@@ -13,21 +13,24 @@ public class CalculatorController {
     }
 
     @RequestMapping(path = "/type", method = RequestMethod.POST)
-    public String handleForm(
-            @RequestParam("type") String type, Model model) {
-
+    public String handleForm(@RequestParam("type") String type, Model model) {
         System.out.println("type: " + type);
-
         model.addAttribute("type", type);
-
-        return add();
+        if (type.equals("+")) {
+            return "calculator/add.html";
+        } else if (type.equals("-")) {
+            return "calculator/substract.html";
+        } else if (type.equals("*")) {
+            return "calculator/multiply.html";
+        } else if (type.equals("/")) {
+            return "calculator/divide.html";
+        } else {
+            System.out.println("Wrong input");
+        }
+        return "";
     }
 
-    @GetMapping("/add")
-    public String add() {
-        return "calculator/add.html";
-    }
-    @RequestMapping(path = "/processformAdd", method = RequestMethod.POST)
+    @RequestMapping(path = "/add", method = RequestMethod.POST)
     public String handleForm(
             @RequestParam("firstValue") Double firstValue,
             @RequestParam("secondValue") Double secondValue, Model model) {
@@ -43,27 +46,6 @@ public class CalculatorController {
         model.addAttribute("result", result);
 
         return "calculator/result.html";
-    }
-
-    @GetMapping("/sub/{firstInput}/{secondInput}")
-    public CalculatorDto substract(@PathVariable double firstInput,
-                                   @PathVariable double secondInput) {
-        return new CalculatorDto(firstInput, secondInput,
-                (double)Math.round((firstInput - secondInput) * 100) / 100);
-    }
-
-    @GetMapping("/mul/{firstInput}/{secondInput}")
-    public CalculatorDto multiply(@PathVariable double firstInput,
-                                  @PathVariable double secondInput) {
-        return new CalculatorDto(firstInput, secondInput,
-                (double)Math.round((firstInput * secondInput) * 100) / 100);
-    }
-
-    @GetMapping("/div/{firstInput}/{secondInput}")
-    public CalculatorDto divide(@PathVariable double firstInput,
-                                @PathVariable double secondInput) {
-        return new CalculatorDto(firstInput, secondInput,
-                (double)Math.round((firstInput / secondInput) * 100) / 100);
     }
 
 }
