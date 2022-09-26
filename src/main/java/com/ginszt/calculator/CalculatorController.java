@@ -9,7 +9,6 @@ public class CalculatorController {
 
     @GetMapping("/")
     public String calc() {
-//        return "calculator/calc.html";
         return "calculator/calculator.html";
     }
 
@@ -52,14 +51,14 @@ public class CalculatorController {
             result = firstValue - secondValue;
         } else if (type.equals("*")) {
             result = firstValue * secondValue;
-        } else if (secondValue != 0){
+        } else if (secondValue != 0) {
             result = firstValue / secondValue;
         } else return "calculator/warning.html";
 
         if (units3.equals("ft")) {
-            result = result / 3.2808399;
+            result = result * 3.2808399;
         } else if (units3.equals("NM")) {
-            result = result / 0.000539956803;
+            result = result * 0.000539956803;
         } else {
             result = result;
         }
