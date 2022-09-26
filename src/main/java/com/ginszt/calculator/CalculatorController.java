@@ -48,7 +48,7 @@ public class CalculatorController {
         if (type.equals("+")) {
             result = firstValue + secondValue;
         } else if (type.equals("-")) {
-            result = firstValue - secondValue;
+            result = Math.abs(firstValue - secondValue);
         } else if (type.equals("*")) {
             result = firstValue * secondValue;
         } else if (secondValue != 0) {
