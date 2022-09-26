@@ -12,7 +12,7 @@
 <header>
     <nav class="navbar navbar-expand-md navbar-dark fixed-top bg-dark">
         <div class="container-fluid">
-            <a class="navbar-brand" href="/calculator">Calculator</a>
+            <a class="navbar-brand" href="/">Calculator</a>
             <button class="navbar-toggler" type="button" data-bs-toggle="collapse"
                     data-bs-target="#navbarCollapse" aria-controls="navbarCollapse"
                     aria-expanded="false" aria-label="Toggle navigation">
@@ -22,66 +22,57 @@
     </nav>
 </header>
 <main class="flex-shrink-0">
-
     <div class="container">
-        <form action="/obliczenia" method="POST">
-
+        <form action="/calculate" method="POST">
             Enter first value:
             <div class="form-group">
-                <input
-                        type="number"
-                        class="form-control"
-                        id="firstValue"
-                        placeholder="first value"
-                        name="firstValue"
-                        step="any">
-
-                <select name="units1" id="units1" class="form-control" type="text" placeholder="Enter units1">
+                <input type="number" class="form-control" id="firstValue" placeholder="first value"
+                       name="firstValue" min="0" step="any" style="width:70%">
+                <select name="units1" id="units1" class="form-control" type="text" placeholder="Enter units1"
+                        style="width:25%">
                     <option value="m">m</option>
                     <option value="ft">ft</option>
                     <option value="NM">NM</option>
                 </select>
             </div>
-
+            <br>
             <div class="form-group">
-                <label for="type">Choose typ of calculation:</label>
-                <select name="type" id="type" class="form-control" type="text" placeholder="Enter type">
+                <label for="type">Choose type of calculation:</label>
+                <select name="type" id="type" class="form-control" type="text" placeholder="Enter type"
+                        style="width:25%">
                     <option value="+">+</option>
                     <option value="-">-</option>
                     <option value="*">*</option>
                     <option value="/">/</option>
                 </select>
             </div>
-
+            <br>
             Enter second value:
             <div class="form-group">
-                <input
-                        type="number"
-                        class="form-control"
-                        id="secondValue"
-                        placeholder="second value"
-                        name="secondValue"
-                        step="any">
-
-                <select name="units2" id="units2" class="form-control" type="text" placeholder="Enter units2">
+                <input type="number" class="form-control" id="secondValue" placeholder="second value"
+                       name="secondValue" min="0" step="any" style="width:70%">
+                <select name="units2" id="units2" class="form-control" type="text" placeholder="Enter units2"
+                        style="width:25%">
                     <option value="m">m</option>
                     <option value="ft">ft</option>
                     <option value="NM">NM</option>
                 </select>
             </div>
-
-            <div>
-                <select name="units3" id="units3" class="form-control" type="text" placeholder="Enter units3">
+            <br>
+            <div class="form-group">
+                <input type="number" class="form-control" id="result" placeholder="result" name="result"
+                       step="any" disabled style="width:70%">
+                <select name="units3" id="units3" class="form-control" type="text" placeholder="Enter units3"
+                        style="width:25%">
                     <option value="m">m</option>
                     <option value="ft">ft</option>
                     <option value="NM">NM</option>
                 </select>
             </div>
-
+            <br>
             <button type="submit" class="btn btn-success">Calculate</button>
         </form>
     </div>
-
 </main>
 <footer class="footer mt-auto py-3 bg-light">
     <div class="container">
